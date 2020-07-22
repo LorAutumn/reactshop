@@ -1,5 +1,6 @@
 import React from 'react'
 
+// displays the page header with h1 and navbar
 function Header () {
   return (
     <div className='header'>

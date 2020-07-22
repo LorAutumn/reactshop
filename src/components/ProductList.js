@@ -1,5 +1,6 @@
 import React from 'react'
 
+// a list of all products that can be ordered
 function ProductList() {
   return (
     <div className='ProductList'>
