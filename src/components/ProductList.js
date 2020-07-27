@@ -1,18 +1,18 @@
 import React from 'react'
 import ProductObject from './products/ProductObject'
+import productsData from './products/productsData'
 
 // a list of all products that can be ordered
 function ProductList() {
+  // maps productData with ProductObject and props
+  const productComponents = productsData.map(product => <ProductObject name={product.name} price={product.price} />)
+  
   return (
-    <div className='ProductList'>
-      <p>List of Products:</p>
-      <ul id='list'>
-        <li><ProductObject product={{name: 'Product 1', price: 'Preis: 1'}} /></li>
-        <li><ProductObject product={{name: 'Product 2', price: 'Preis: 2'}} /></li>
-        <li><ProductObject product={{name: 'Product 2', price: 'Preis: 3'}} /></li>
-      </ul>
+    <div>
+      {/* displays the ProductList component */}
+      {productComponents}
     </div>
-  )
+  ) 
 }
 
 export default ProductList

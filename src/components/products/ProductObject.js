@@ -1,9 +1,10 @@
 import React from 'react'
 
 function ProductObject(props) {
+  // returns a ProductObject a shown in the browser
   return [
-    <li>{props.product.name}</li>,
-    <li>{props.product.price}</li>,
+    <li>{props.name}</li>,
+    <li>{props.price}</li>,
     <hr/>
   ]
 }
