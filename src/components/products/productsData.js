@@ -18,7 +18,7 @@ const productsData = [
     id: 4,
     name: 'Besteck',
     price: 8
-  },
+  }
 
 ]
 

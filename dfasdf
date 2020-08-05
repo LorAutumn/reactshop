@@ -1,0 +1,10 @@
+[33m08ea8cc[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: commit: added log in / log out state to Header component
+[33m4f8d1ac[m HEAD@{1}: commit: changed all components from function based to class based
+[33m2df44b9[m HEAD@{2}: commit: added currency to ProductObject
+[33m9a85486[m HEAD@{3}: commit: added eslint to project
+[33m17e3c93[m HEAD@{4}: commit: added component mapping and productsData List
+[33mfa6d443[m HEAD@{5}: commit: added price props and li Object in ProductList for Price and an <hr/>
+[33m8726bf9[m HEAD@{6}: commit: added ProductObject component and added props stream from ProductList to ProductObject
+[33m8411cf3[m HEAD@{7}: commit: added documentation
+[33mafb3878[m HEAD@{8}: commit: first commit - main react rendering and first stylin
+[33m498b4d3[m HEAD@{9}: commit (initial): Initialize project using Create React App
