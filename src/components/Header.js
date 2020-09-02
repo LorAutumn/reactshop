@@ -13,7 +13,9 @@ class Header extends React.Component {
     return (
       <div className='header'>
         <h1>Shop Home</h1>
-        <p id='isLoggedIn'>{this.state.isLoggedIn ? 'log out' : 'log in'}</p>
+        <button id='isLoggedIn'>{this.state.isLoggedIn ? 'log out' : 'log in'}</button>
+        <br/>
+        <br/>        
         <nav>
           <ul className='nav'>
             <li className='home'>Home</li>

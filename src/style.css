@@ -24,7 +24,7 @@ body {
 #isLoggedIn {
   color: cadetblue;
   padding-right: 16px;
-  text-align: right
+  float: right
 }
 
 .shoppingCart {
