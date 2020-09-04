@@ -21,11 +21,19 @@ body {
   background-color: lightblue;
 }
 
+#addProduct {
+  color: cadetblue;
+  padding-right: 16px;
+  float: right
+}
+
 #isLoggedIn {
   color: cadetblue;
   padding-right: 16px;
   float: right
 }
+
+
 
 .shoppingCart {
   float: right;

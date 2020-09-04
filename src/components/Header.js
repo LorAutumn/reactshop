@@ -10,6 +10,7 @@ class Header extends React.Component {
     this.clickHandler = this.clickHandler.bind(this)
   }
 
+  // toggles isLoggedIn true / false
   clickHandler() {
     this.setState({
       isLoggedIn: !this.state.isLoggedIn
@@ -20,7 +21,8 @@ class Header extends React.Component {
     return (
       <div className='header'>
         <h1>Shop Home</h1>
-    <button id='isLoggedIn' onClick={this.clickHandler}>{this.state.isLoggedIn ? 'log out' : 'log in'}</button>
+        <button id='isLoggedIn' onClick={this.clickHandler}>{this.state.isLoggedIn ? 'log out' : 'log in'}</button>
+        <button id='addProduct' style={{display: this.state.isLoggedIn ? '' : 'none'}}>add Product</button>
         <br/>
         <br/>        
         <nav>
