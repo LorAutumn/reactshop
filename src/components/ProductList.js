@@ -26,9 +26,8 @@ class ProductList extends React.Component {
         data: updatedData
       }
     })
-    // console.log(this.state)
-    
-  }
+    console.log(this.state)
+    }
 
 
   render() {

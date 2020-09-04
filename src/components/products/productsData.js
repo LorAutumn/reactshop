@@ -3,7 +3,7 @@ const productsData = [
     id: 1,
     name: 'Stuhl',
     price: 150,
-    value: 5
+    value: null
   },
   {
     id: 2,
