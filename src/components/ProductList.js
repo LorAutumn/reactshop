@@ -29,7 +29,6 @@ class ProductList extends React.Component {
     console.log(this.state)
     }
 
-
   render() {
     // maps productData with ProductObject and props -> returns an array of Objects
     const productComponents = this.state.data.map(product => <ProductObject key={product.id} id={product.id} name={product.name} price={product.price} value={product.value} handleClick={this.handleClick} />)
