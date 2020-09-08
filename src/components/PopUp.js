@@ -11,13 +11,13 @@ class PopUp extends Component {
       <div className='popup'>
         <div className='popup-content'>
           <span className='close' onClick={this.handleClick}>&times;</span>
-          <p>Ich bin ein Popup!!!</p>
+          <p>Add a product!</p>
           <input type="text" placeholder='product name'/>
           <br/>
           <input type="text" placeholder='price'/>
           <br/>
           <br/>
-          <input type="button" value='add product'/>
+          <input type="button" value='add product' onClick={this.props.addProduct}/>
         </div>
       </div>
     )

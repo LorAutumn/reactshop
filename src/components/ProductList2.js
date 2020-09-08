@@ -10,7 +10,6 @@ class ProductList extends React.Component {
       data: productsData
     }
     this.handleClick = this.handleClick.bind(this)
-    this.addProduct = this.addProduct.bind(this)
   }
 
   // add the value of input element to product.value and updates state
@@ -30,27 +29,9 @@ class ProductList extends React.Component {
     console.log(this.state)
     }
 
-  // add Product !!! update List
-  addProduct() {
-    const np = [{
-      id: 5,
-      name: 'Sessel',
-      price: 450,
-      value: null
-    }]
-    this.setState(state => {
-      const data1 = state.data.concat(np)
-      console.log(data1)
-      
-      return(
-        state.data = data1
-      )
-    })
-  }
-
   render() {
     // maps productData with ProductObject and props -> returns an array of Objects
-    const productComponents = this.state.data.map(product => <ProductObject key={product.id} id={product.id} name={product.name} price={product.price} value={product.value} handleClick={this.handleClick} addProduct={this.addProduct} />)
+    const productComponents = this.state.data.map(product => <ProductObject key={product.id} id={product.id} name={product.name} price={product.price} value={product.value} handleClick={this.handleClick} />)
     
     return (
       <div>
