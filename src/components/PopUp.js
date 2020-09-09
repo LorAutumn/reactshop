@@ -17,7 +17,7 @@ class PopUp extends Component {
           <input type="text" placeholder='price'/>
           <br/>
           <br/>
-          <input type="button" value='add product' onClick={this.props.addProduct}/>
+          <input type="button" value='add product' onClick={this.props.addNewProduct}/>
         </div>
       </div>
     )
@@ -25,3 +25,4 @@ class PopUp extends Component {
 }
 
 export default PopUp
+

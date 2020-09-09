@@ -17,24 +17,3 @@ function ProductObject(props) {
 }
 
 export default ProductObject
-
-
-// class ProductObject extends React.Component {  
-//   // returns a ProductObject shown in the browser
-  
- 
-  
-//     render() {  
-//   // FIX: only renders 'cart: value' on first Element
-//       return (
-//         <ul>
-//           <li>{this.props.name}</li>
-//           <li>{this.props.price}</li>
-//           <input type="number" id={this.props.key} name="amount"></input>
-//           <button onClick={() => this.props.handleClick(this.props.produc.id)}>add to cart</button>
-//           <p>cart: {this.props.value}</p>
-//           <hr/>
-//         </ul>
-//       )
-//     }
-//   }
