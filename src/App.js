@@ -15,15 +15,19 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this)
     this.addNewProduct = this.addNewProduct.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    // this.onKeyUp = this.onKeyUp.bind(this)
   }
 
-  // add the value of input element to product.value and updates state
+  // add the value of input element to product.value and updates state (adds amount of product to cart)
   handleClick(id) {
     this.setState(prevState => {
       const updatedData = prevState.data.map(product => {
         if(product.id === id) {
-          const addToCart = parseInt(document.getElementById(product.id).value)
-          product.value = (product.value+=addToCart)
+          let addToCart = parseInt(document.getElementById(product.id).value)
+          if (addToCart > 0) {
+            product.value = (product.value+=addToCart)
+            document.getElementById(product.id).value = ''
+          }
         }
         return product
       })
@@ -50,11 +54,18 @@ class App extends React.Component {
     })
   }
 
+  // onKeyUp(event) {
+  //   if (event.charCode === 13) {
+  //     console.log('test')
+  //     this.handleClick()
+  //   }
+  // }
+
   render() {
     return (
       <div>
         <Header addNewProduct={this.addNewProduct} data={this.state.data} clickHandler={this.clickHandler}/>
-        <Main data={this.state.data} handleClick={this.handleClick} />
+        <Main data={this.state.data} handleClick={this.handleClick} /*onKeyPress={this.onKeyUp}*//>
         <Footer />
       </div>
     )
