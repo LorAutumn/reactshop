@@ -34,7 +34,7 @@ class Header extends React.Component {
         <h1>Shop Home</h1>
         <button id='isLoggedIn' onClick={this.clickHandler}>{this.state.isLoggedIn ? 'log out' : 'log in'}</button>
           <div>
-            {this.state.seen ? <PopUp toggle={this.togglePop} addNewProduct={this.props.addNewProduct}  /> : null}
+            {this.state.seen ? <PopUp toggle={this.togglePop} addNewProduct={this.props.addNewProduct} handleChange={this.props.handleChange}  /> : null}
           </div>
         <button id='addProduct' style={{display: this.state.isLoggedIn ? '' : 'none'}} onClick={this.togglePop}>add Product</button>
         <br/>

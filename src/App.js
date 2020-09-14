@@ -10,11 +10,15 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      data: productsData
+      data: productsData,
+      newProductName: '',
+      newProductPrice: ''
     }
     this.handleClick = this.handleClick.bind(this)
     this.addNewProduct = this.addNewProduct.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.addNewProduct = this.addNewProduct.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     // this.onKeyUp = this.onKeyUp.bind(this)
   }
 
@@ -37,12 +41,20 @@ class App extends React.Component {
     })
     }
 
+  handleChange(event) {
+    const {name, value} = event.target
+    this.setState({
+      [name]: value
+    })
+    console.log(this.state.newProductName)
+  }
+
    // function to add a product to the productList at the PopUp
-  addNewProduct() {
+  addNewProduct(event) {
     const np = [{
-      id: 5,
-      name: 'Sessel',
-      price: 450,
+      id: this.state.data.length + 1,
+      name: this.state.newProductName,
+      price: this.state.newProductPrice,
       value: null
     }]
     // add Product !!! update List
@@ -54,18 +66,13 @@ class App extends React.Component {
     })
   }
 
-  // onKeyUp(event) {
-  //   if (event.charCode === 13) {
-  //     console.log('test')
-  //     this.handleClick()
-  //   }
-  // }
+ 
 
   render() {
     return (
       <div>
-        <Header addNewProduct={this.addNewProduct} data={this.state.data} clickHandler={this.clickHandler}/>
-        <Main data={this.state.data} handleClick={this.handleClick} /*onKeyPress={this.onKeyUp}*//>
+        <Header addNewProduct={this.addNewProduct} data={this.state.data} clickHandler={this.clickHandler} handleChange={this.handleChange}/>
+        <Main data={this.state.data} handleClick={this.handleClick} addNewProduct={this.addNewProduct} />
         <Footer />
       </div>
     )

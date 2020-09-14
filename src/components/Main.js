@@ -8,7 +8,7 @@ class Main extends React.Component {
     return (
       <div className='ProductList' id='list'>
         {/* displays the ProductList */}
-        <ProductList data={this.props.data} handleClick={this.props.handleClick} /*onKeyPress={this.props.onKeyPress}*//>
+        <ProductList data={this.props.data} handleClick={this.props.handleClick} handleChange={this.props.handleChange}/>
       </div>
     )
   }
