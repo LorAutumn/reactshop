@@ -1,56 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PopUp from './PopUp'
 
 // displays the page header with h1 and navbar (class based)
-class Header extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      isLoggedIn: true,
-      seen: false,
-    }
-    this.clickHandler = this.clickHandler.bind(this)
-    this.togglePop = this.togglePop.bind(this)
+function Header() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const [seen, setSeen] = useState(false)
+
+  const clickHandler = () => {
+    setIsLoggedIn(!isLoggedIn)
   }
 
-  // toggles isLoggedIn true / false
-  clickHandler() {
-    this.setState({
-      isLoggedIn: !this.state.isLoggedIn
-    })
+  const togglePop = () => {
+    setSeen(!seen)
   }
 
-  // toggles state of seen ( if PopUp for product adding is seen or not)
-  togglePop() {
-    this.setState({
-      seen: !this.state.seen
-    })
-  }
-  
-  
-  render() {
-    return (
-      <div className='header'>
-        <h1>Shop Home</h1>
-        <button id='isLoggedIn' onClick={this.clickHandler}>{this.state.isLoggedIn ? 'log out' : 'log in'}</button>
-          <div>
-            {this.state.seen ? <PopUp toggle={this.togglePop} addNewProduct={this.props.addNewProduct} handleChange={this.props.handleChange}  /> : null}
-          </div>
-        <button id='addProduct' style={{display: this.state.isLoggedIn ? '' : 'none'}} onClick={this.togglePop}>add Product</button>
-        <br/>
-        <br/>        
-        <nav>
-          <ul className='nav'>
-            <li className='home'>Home</li>
-            <li className='shoppingCart'>Warenkorb</li>
-          </ul>
-        </nav>
-      </div>
-    )
-  }
+  return(
+    <div className='header'>
+      <h1>Shop Home</h1>
+      <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
+        <div>
+          {seen ? <PopUp toggle={togglePop} /> : null}
+        </div>
+      <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
+      <br/>
+      <br/>        
+      <nav>
+        <ul className='nav'>
+          <li className='home'>Home</li>
+          <li className='shoppingCart'>Warenkorb</li>
+        </ul>
+      </nav>
+    </div>
+  )
+
 }
-
-
 
 export default Header
 
