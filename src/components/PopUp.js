@@ -12,6 +12,7 @@ class PopUp extends Component {
 
   submitNewProduct(event) {
     this.props.addNewProduct(event)
+    this.props.toggle()
   }
 
   // writes data of form field to app->state
