@@ -25,7 +25,7 @@ function PopUp(props) {
     props.handleChange(event)
   }
 
-  const addNewProduct = (event) => {
+  const addNewProduct = () => {
     props.setData([ ...data, {
       id: data.length,
       name: handleChangeList.newProductName,
@@ -33,6 +33,7 @@ function PopUp(props) {
       value: null
       }
     ])
+    props.toggle()
   }
   
   
