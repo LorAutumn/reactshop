@@ -1,6 +1,7 @@
 body {
   font-family: 'Calibri', Arial;
   margin: 0;
+  background-color: rgba(0, 0, 0, 0.753);
 }
 
 .header {

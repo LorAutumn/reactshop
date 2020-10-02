@@ -4,20 +4,34 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 import productsData from './components/products/productsData'
 
+export const DataContext = React.createContext()
+export const HandleChangeContext = React.createContext()
+
 
 function App() {
 
   const [data, setData] = useState(productsData)
+  const [handleChangeList, setHandleChangeList] = useState({})
+  console.log(data)
+  console.log(handleChangeList)
+  
+  const handleChange = (event) => {
+    const {name, value} = event.target
+    setHandleChangeList({...handleChangeList, [name]: value})
+  }
 
+  
   return(
     <div>
-        <Header />
+        <DataContext.Provider value={data}>
+          <HandleChangeContext.Provider value={handleChangeList}>
+            <Header handleChange={handleChange} setData={setData}/>
+          </HandleChangeContext.Provider>
+        </ DataContext.Provider>
     </div>
   )
 
 }
-
-
 
 export default App
 
