@@ -5,6 +5,8 @@ import Footer from './components/Footer'
 import productsData from './components/products/productsData'
 
 export const DataContext = React.createContext()
+export const SetDataContext = React.createContext()
+export const HandleChangeListContext = React.createContext()
 export const HandleChangeContext = React.createContext()
 
 
@@ -12,9 +14,8 @@ function App() {
 
   const [data, setData] = useState(productsData)
   const [handleChangeList, setHandleChangeList] = useState({})
-  console.log(data)
-  console.log(handleChangeList)
   
+  // container for handleChange state deposit (temp)
   const handleChange = (event) => {
     const {name, value} = event.target
     setHandleChangeList({...handleChangeList, [name]: value})
@@ -24,9 +25,13 @@ function App() {
   return(
     <div>
         <DataContext.Provider value={data}>
-          <HandleChangeContext.Provider value={handleChangeList}>
-            <Header handleChange={handleChange} setData={setData}/>
-          </HandleChangeContext.Provider>
+          <SetDataContext.Provider value={setData}>
+            <HandleChangeListContext.Provider value={handleChangeList}>
+              <Header handleChange={handleChange} setData={setData}/>
+              <Main />
+              <Footer />
+            </ HandleChangeListContext.Provider>
+          </ SetDataContext.Provider>  
         </ DataContext.Provider>
     </div>
   )

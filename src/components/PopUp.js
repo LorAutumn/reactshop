@@ -1,33 +1,27 @@
-import React, {useState, useContext} from 'react'
-import {DataContext, HandleChangeContext} from '../App'
+import React, {useContext} from 'react'
+import {DataContext, HandleChangeListContext} from '../App'
 
 
 function PopUp(props) {
   
-  const {toggle, setToggle} = useState(props)
-  const {handleChange, setHandleChange} = useState(props)
+  // const {toggle, setToggle} = useState(props)
+  // const {handleChange, setHandleChange} = useState(props)
 
   const data = useContext(DataContext)
-  const handleChangeList = useContext(HandleChangeContext)
+  const handleChangeList = useContext(HandleChangeListContext)
 
   const handleClick = () => {
     props.toggle()
   }
 
-  const submitNewProduct = (event) => {
-    addNewProduct(event)
-    toggle()
-  }
-
   // writes data of form field to app->state
   const passDownData = (event) => {
-    // const value = event.target.value
     props.handleChange(event)
   }
 
   const addNewProduct = () => {
     props.setData([ ...data, {
-      id: data.length,
+      id: data.length + 1,
       name: handleChangeList.newProductName,
       price: handleChangeList.newProductPrice,
       value: null
@@ -35,7 +29,6 @@ function PopUp(props) {
     ])
     props.toggle()
   }
-  
   
   return(
     <div className='popup'>
@@ -53,7 +46,6 @@ function PopUp(props) {
     </div>
   )
 }
-
 
 export default PopUp
 

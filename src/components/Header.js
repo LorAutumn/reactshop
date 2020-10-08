@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import PopUp from './PopUp'
-import {DataContext} from '../App'
 
 // displays the page header with h1 and navbar (class based)
 function Header(props) {
