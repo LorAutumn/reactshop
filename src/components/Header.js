@@ -20,7 +20,7 @@ function Header(props) {
       <h1>Shop Home</h1>
       <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
         <div>
-          {seen ? <PopUp handleChange={props.handleChange} toggle={togglePop} setData={props.setData} /> : null}
+          {seen ? <PopUp handleChange={props.handleChange} toggle={togglePop} /> : null}
         </div>
       <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
       <br/>

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {DataContext, HandleChangeListContext} from '../App'
+import {DataContext, HandleChangeContext} from '../App'
 
 
 function PopUp(props) {
@@ -8,7 +8,7 @@ function PopUp(props) {
   // const {handleChange, setHandleChange} = useState(props)
 
   const dataContext = useContext(DataContext)
-  const handleChangeList = useContext(HandleChangeListContext)
+  const handleChange = useContext(HandleChangeContext)
 
   const handleClick = () => {
     props.toggle()
@@ -16,14 +16,14 @@ function PopUp(props) {
 
   // writes data of form field to app->state
   const passDownData = (event) => {
-    props.handleChange(event)
+    handleChange.handleChangeState(event)
   }
 
   const addNewProduct = () => {
     dataContext.setData([ ...dataContext.data, {
       id: dataContext.data.length + 1,
-      name: handleChangeList.newProductName,
-      price: handleChangeList.newProductPrice,
+      name: handleChange.handleChangeList.newProductName,
+      price: handleChange.handleChangeList.newProductPrice,
       value: null
       }
     ])
