@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import productsData from './components/products/productsData'
 
 export const DataContext = React.createContext()
-export const SetDataContext = React.createContext()
+// export const SetDataContext = React.createContext()
 export const HandleChangeListContext = React.createContext()
 export const HandleChangeContext = React.createContext()
 
@@ -24,14 +24,14 @@ function App() {
   
   return(
     <div>
-        <DataContext.Provider value={data}>
-          <SetDataContext.Provider value={setData}>
+        <DataContext.Provider value={{data: data, setData: setData}}>
+          {/* <SetDataContext.Provider value={setData}> */}
             <HandleChangeListContext.Provider value={handleChangeList}>
               <Header handleChange={handleChange} setData={setData}/>
               <Main />
               <Footer />
             </ HandleChangeListContext.Provider>
-          </ SetDataContext.Provider>  
+          {/* </ SetDataContext.Provider>   */}
         </ DataContext.Provider>
     </div>
   )

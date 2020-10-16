@@ -3,7 +3,7 @@ import ProductList from './ProductList'
 
 
 // // displays the ProductList (class based)
-function Main (props) {
+function Main() {
 
   return (
     <div className='ProductList' id='list'>

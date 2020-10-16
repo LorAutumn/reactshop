@@ -7,7 +7,7 @@ function PopUp(props) {
   // const {toggle, setToggle} = useState(props)
   // const {handleChange, setHandleChange} = useState(props)
 
-  const data = useContext(DataContext)
+  const dataContext = useContext(DataContext)
   const handleChangeList = useContext(HandleChangeListContext)
 
   const handleClick = () => {
@@ -20,8 +20,8 @@ function PopUp(props) {
   }
 
   const addNewProduct = () => {
-    props.setData([ ...data, {
-      id: data.length + 1,
+    dataContext.setData([ ...dataContext.data, {
+      id: dataContext.data.length + 1,
       name: handleChangeList.newProductName,
       price: handleChangeList.newProductPrice,
       value: null
