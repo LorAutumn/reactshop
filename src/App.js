@@ -18,7 +18,6 @@ function App() {
     const {name, value} = event.target
     setHandleChangeList({...handleChangeList, [name]: value})
   }
-
   
   return(
     <div>
