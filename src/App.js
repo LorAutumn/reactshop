@@ -3,16 +3,19 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
 import productsData from './components/products/productsData'
+import shoppingCartData from './components/products/shoppingCartData'
 
 export const DataContext = React.createContext()
 export const HandleChangeContext = React.createContext()
+export const CartDataContext = React.createContext()
 
 
 function App() {
 
-  const [data, setData] = useState(productsData)
-  const [handleChangeList, setHandleChangeList] = useState({})
-  
+  const [data, setData] = useState(productsData)                    // state for data
+  const [handleChangeList, setHandleChangeList] = useState({})      // state for list of products available
+  const [cartData, setCartData] = useState(shoppingCartData)
+
   // container for handleChange state deposit (temp)
   const handleChange = (event) => {
     const {name, value} = event.target
@@ -23,9 +26,11 @@ function App() {
     <div>
         <DataContext.Provider value={{data: data, setData: setData}}>
             <HandleChangeContext.Provider value={{handleChangeState: handleChange, handleChangeList: handleChangeList}}>
-              <Header setData={setData}/>
-              <Main />
-              <Footer />
+              <CartDataContext.Provider value={{cartData: cartData, setCartData: setCartData}}>
+                <Header setData={setData}/>
+                <Main />
+                <Footer />
+              </CartDataContext.Provider>
             </ HandleChangeContext.Provider>
           {/* </ SetDataContext.Provider>   */}
         </ DataContext.Provider>
