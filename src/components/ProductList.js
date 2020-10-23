@@ -8,46 +8,27 @@ import {CartDataContext} from '../App'
 function ProductList ()  {
   const dataContext = useContext(DataContext)
   const cartDataContext = useContext(CartDataContext)
-  
-
-
-
-  // adds the input amount of the product to the shopping cart
-  const handleClick = (id) => {
-    const newData = dataContext.data[id-1]
-    console.log(newData)
-    console.log('cartData:', cartDataContext.cartData)
-    const addToCart = parseInt(document.getElementById(id).value)
-    // const cartValue = product.value + addToCart
-    cartDataContext.setCartData([...cartDataContext.cartData, newData])
-    console.log(cartDataContext.cartData)
-  }
+  const cartData = cartDataContext.cartData
   
   
   
-  // const handleClick = (id) => {
-  //   newData = dataContext.data.map(product => {
-  //     const addToCart = parseInt(document.getElementById(id).value)  // reads the value of the input field
-  //     const cartValue = product.value + addToCart                    // adds the amount of input field to the amount of the product in the shopping cart
-  //     if (id === product.id) {                                       // iterates through the data array and writes the cartValue to each Object
-  //       return{
-  //         ...product,
-  //         value: cartValue
-  //       } 
-  //     }
-  //     // return(                                                        // returns the product array without changes
-  //     //   product
-  //     // )
-  //     console.log('cartValue: ', cartValue)
-  //   })
-  //   console.log('cartData',cartDataContext.cartData)
-  //   console.log('id:',newData[id-1])
-  //   console.log(id+1)
-  //   console.log('newData: ',newData)  
-  //   console.log('data', dataContext.data)
-  //   cartDataContext.setCartData([...cartDataContext.cartData, {newData}]) // neuen Eintrag hinzufügen - nicht überschreiben
-  // }
+  // adds a product to the cart
+  const addToCart = (id) => {                            
+    const addValue = parseInt(document.getElementById(id).value)
+    const findCartItem = cartData.find(item => item.id === id) // searches and returns an item inside of the Cart by id 
+    const newCart = cartData.filter(item => item.id != id)
+    
+    // checks if item already exits in cart and only updates the Amount-value
+    if (findCartItem) {
+      findCartItem.value = findCartItem.value + addValue    // sums up the input value in the form and the exisiting value in the cart
+      newCart.push(findCartItem)                            // pushes new object of actual item to newCart variable
+      cartDataContext.setCartData([...newCart])             // pushes new Cart to the cartData state
+    } else {
+    cartDataContext.setCartData([...cartDataContext.cartData, {...dataContext.data[id-1], value: addValue}])    // adds a new item (object) to the cartData state (shoppingCart)
+      }
+    }
 
+ 
   const productComponents = dataContext.data.map(product => 
     <ProductObject 
       key={product.id} 
@@ -55,7 +36,7 @@ function ProductList ()  {
       name={product.name} 
       price={product.price} 
       value={product.value} 
-      handleClick={handleClick} 
+      addToCart={addToCart} 
     />
   )
 
