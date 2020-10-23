@@ -8,6 +8,7 @@ function CartObject (props) {
       <li>{props.name}</li>
       <li>{props.price}</li>
       <p>cart: {props.value}</p>
+      <button onClick={() => props.removeItem(props.id)}>remove from cart</button>
       <hr/>
     </ul>
   )

@@ -10,13 +10,31 @@ function ProductList ()  {
   const cartDataContext = useContext(CartDataContext)
   const cartData = cartDataContext.cartData
   
-  
-  
+  const initialState = cartData
+    const reducer = (state, action) => {
+      switch(action.type) {
+        case 'addToCart':
+          return {...state, value: state.value + action.value }
+    //     case 'decrement':
+    //       return {...state, firstCounter: state.firstCounter - action.value }
+    //       case 'increment2':
+    //         return {...state, secondCounter: state.secondCounter + action.value }
+    //       case 'decrement2':
+    //         return {...state, secondCounter: state.secondCounter - action.value }
+    //     case 'reset':
+    //       return initialState
+        default:
+          return state
+      }
+    }
+    
+
+
   // adds a product to the cart
   const addToCart = (id) => {                            
-    const addValue = parseInt(document.getElementById(id).value)  // parses the value of the actual dom.element.value of the id's input form
-    const findCartItem = cartData.find(item => item.id === id)    // searches and returns an item inside of the Cart by id 
-    const newCart = cartData.filter(item => item.id != id)        // filters the actual id-Object out of the cartData Array an writes the filtered array to newCart variable
+    const addValue = parseInt(document.getElementById(id).value)  //parses the value of the actual dom.element.value of the id's input form
+    const findCartItem = cartData.find(item => item.id === id) // searches and returns an item inside of the Cart by id 
+    const newCart = cartData.filter(item => item.id != id)
     
     // checks if item already exits in cart and only updates the Amount-value
     if (findCartItem) {
@@ -27,12 +45,6 @@ function ProductList ()  {
     cartDataContext.setCartData([...cartDataContext.cartData, {...dataContext.data[id-1], value: addValue}])    // adds a new item (object) to the cartData state (shoppingCart)
       }
     }
-  
-  // removes an item from the cart
-  const removeItem = (id) => {
-    const newCart = cartData.filter(item => item.id != id)    // filters the actual id-Object out of the cartData Array an writes the filtered array to newCart variable
-    cartDataContext.setCartData([...newCart])                 // pushes new Cart to the cartData state
-  }
 
  
   const productComponents = dataContext.data.map(product => 
@@ -52,7 +64,6 @@ function ProductList ()  {
       name={product.name} 
       price={product.price} 
       value={product.value}
-      removeItem={removeItem}
     />
   )
     
