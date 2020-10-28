@@ -1,14 +1,10 @@
 import React, {useContext} from 'react'
 import ProductObject from './products/ProductObject'
-import {DataContext} from '../App'
 import {CartDataContext} from '../App'
 
 // a list of all products that can be ordered (class based)
 function ProductList ()  {
-  const dataContext = useContext(DataContext)
   const cartDataContext = useContext(CartDataContext)
-  // const setData = useContext(SetDataContext)
-  let newData = []
 
   const productComponents = cartDataContext.cartData.map(product => 
     <ProductObject 

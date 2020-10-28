@@ -18,7 +18,7 @@ function ProductList ()  {
   const addToCart = (id) => {                            
     let addValue = parseInt(document.getElementById(id).value)      // parses the value of the actual dom.element.value of the id's input form
     const findCartItem = cartData.find(item => item.id === id)        // searches and returns an item inside of the Cart by id 
-    const newCart = cartData.filter(item => item.id != id)            // filters the actual id-Object out of the cartData Array and writes the filtered array to newCart variable
+    const newCart = cartData.filter(item => item.id !== id)            // filters the actual id-Object out of the cartData Array and writes the filtered array to newCart variable
     const cartItemIndex = cartData.findIndex(item => item.id === id)  // saves the index of the actual item
     const itemSum = dataContext.data[id-1].price * addValue           // sums item price with 
     
@@ -37,7 +37,7 @@ function ProductList ()  {
   
   // removes an item from the cart
   const removeItem = (id) => {
-    const newCart = cartData.filter(item => item.id != id)    // filters the actual id-Object out of the cartData Array an writes the filtered array to newCart variable
+    const newCart = cartData.filter(item => item.id !== id)    // filters the actual id-Object out of the cartData Array an writes the filtered array to newCart variable
     cartDataContext.setCartData([...newCart])                 // pushes new Cart to the cartData state
   }
 
