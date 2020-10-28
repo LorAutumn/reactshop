@@ -15,9 +15,7 @@ function CartTotalValue() {
     cartSumContext.setCartSum(cartSumContext.cartSum =+ summ)
   }
 
-  useEffect(() => {               // triggers sumUp on every cartData change to calculate the total cart value
-    sumUp()
-  }, [cartData])  
+  useEffect(sumUp, [cartData])
 
   return(
     <div>
