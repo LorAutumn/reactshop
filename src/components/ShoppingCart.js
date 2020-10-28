@@ -10,24 +10,6 @@ function ProductList ()  {
   // const setData = useContext(SetDataContext)
   let newData = []
 
-  // adds the input amount of the product to the shopping cart
-  const handleClick = (id) => {
-    newData = dataContext.data.map(product => {
-      const addToCart = parseInt(document.getElementById(id).value)  // reads the value of the input field
-      const cartValue = product.value + addToCart                    // adds the amount of input field to the amount of the product in the shopping cart
-      if (id === product.id) {                                       // iterates through the data array and writes the cartValue to each Object
-        return{
-          ...product,
-          value: (cartValue)
-        }
-      }
-      return(                                                        // returns the product array without changes
-        product
-      )
-    })
-    dataContext.setData(data => newData)
-  }
-
   const productComponents = cartDataContext.cartData.map(product => 
     <ProductObject 
       key={product.id} 

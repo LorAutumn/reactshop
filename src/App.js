@@ -8,6 +8,7 @@ import shoppingCartData from './components/products/shoppingCartData'
 export const DataContext = React.createContext()
 export const HandleChangeContext = React.createContext()
 export const CartDataContext = React.createContext()
+export const CartSumContext = React.createContext()
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
   const [data, setData] = useState(productsData)                    // state for data
   const [handleChangeList, setHandleChangeList] = useState({})      // state for list of products available
   const [cartData, setCartData] = useState(shoppingCartData)
-
+  const [cartSum, setCartSum] = useState(0)
+ 
   // container for handleChange state deposit (temp)
   const handleChange = (event) => {
     const {name, value} = event.target
@@ -27,9 +29,11 @@ function App() {
         <DataContext.Provider value={{data: data, setData: setData}}>
             <HandleChangeContext.Provider value={{handleChangeState: handleChange, handleChangeList: handleChangeList}}>
               <CartDataContext.Provider value={{cartData: cartData, setCartData: setCartData}}>
-                <Header setData={setData}/>
-                <Main />
-                <Footer />
+                <CartSumContext.Provider value={{cartSum: cartSum, setCartSum: setCartSum}}>
+                  <Header setData={setData}/>
+                  <Main />
+                  <Footer />
+                </CartSumContext.Provider>
               </CartDataContext.Provider>
             </ HandleChangeContext.Provider>
           {/* </ SetDataContext.Provider>   */}

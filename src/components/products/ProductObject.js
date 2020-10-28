@@ -13,10 +13,9 @@ function ProductObject(props) {
     <ul>
       <li>{props.id}</li>
       <li>{props.name}</li>
-      <li>{props.price}</li>
+      <li>{props.price} €</li>
       <input type="number" className="input" id={props.id} onKeyPress={onKeyPress}></input>
       <button onClick={() => props.addToCart(props.id)}>add to cart</button>
-      <p>cart: {props.value}</p>
       <hr/>
     </ul>
   )

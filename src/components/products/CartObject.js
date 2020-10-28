@@ -4,10 +4,11 @@ function CartObject (props) {
  
   return (
     <ul>
-      <li>{props.id}</li>
+      <li>Artikelnummer: {props.id}</li>
       <li>{props.name}</li>
-      <li>{props.price}</li>
-      <p>cart: {props.value}</p>
+      <li>{props.price} €</li>
+      <p>ammount: {props.value}</p>
+      <p>position value: {props.price * props.value} €</p>
       <button onClick={() => props.removeItem(props.id)}>remove from cart</button>
       <hr/>
     </ul>

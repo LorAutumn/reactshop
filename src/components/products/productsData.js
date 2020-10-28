@@ -9,19 +9,19 @@ const productsData = [
     id: 2,
     name: 'Tisch',
     price: 450,
-    value: null
+    value: 0
   },
   {
     id: 3,
     name: 'Teller',
     price: 10,
-    value: null
+    value: 0
   },
   {
     id: 4,
     name: 'Besteck',
     price: 8,
-    value: null
+    value: 0
   }
 
 ]

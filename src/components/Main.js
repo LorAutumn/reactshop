@@ -17,6 +17,14 @@ function Main() {
       </div>
     </BrowserRouter>
   )
+
+  // return(
+  //   <div>
+  //   <ProductList/>
+  //   <Cart/>
+  //   <CartTotalValue/>
+  //   </div>
+  // )
 }
 
 export default Main
