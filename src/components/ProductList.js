@@ -65,11 +65,11 @@ function ProductList ()  {
   )
     
   return (
-    <div className='ProductList' id='list'>
+    <div className='ProductList'>
       {/* displays the ProductList component */}
-      {productComponents}
-      {cartComponents}
-      <CartTotalValue/>
+      <div id='list'>{productComponents}</div>
+      <div id='cart'>{cartComponents}<CartTotalValue/></div>
+      
     </div>
   )
  

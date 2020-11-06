@@ -2,14 +2,14 @@ body {
   font-family: 'Calibri', Arial;
   margin: 0;
   background-color: rgba(0, 0, 0, 0.753);
+  width: 99%
 }
 
 .header {
   color: red;
-  width: 100%;
+  /* width: 100%; */
   margin: 0 auto;
   padding: 10px;
-  flex-direction: row;
 }
 
 .nav {
@@ -20,18 +20,20 @@ body {
   color: cadetblue;
   font-weight: bold;
   background-color: lightblue;
+  /* width: 98%; */
 }
 
 #addProduct {
   color: cadetblue;
   padding-right: 16px;
-  float: right
+  float: right;
+  right: 4%;
 }
 
 #isLoggedIn {
   color: cadetblue;
   padding-right: 16px;
-  float: right
+  float: right;
 }
 
 
@@ -56,19 +58,35 @@ body {
 }
 
 .ProductList {
-  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  
 }
 
 #list {
   color: white;
   background: grey;
-  margin: 20px;
-  padding: 60px;
-  line-height: 1.5;
-  list-style-type: none
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: auto;
+  height: auto;
+  flex-basis: 80%;
+}
+
+#cart {
+  color: white;
+  background: grey;
+  display: grid;
+  overflow: auto;
+  height: auto;
+  flex-basis: 20%;
 }
 
 .footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 97%;
   margin: 20px;
   padding: 2px;
   background-color: lightslategray;
