@@ -37,7 +37,6 @@ function Header(props) {
       </nav>
     </div>
   )
-
 }
 
 export default Header

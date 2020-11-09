@@ -23,6 +23,10 @@ body {
   /* width: 98%; */
 }
 
+.nav li:hover {
+  background-color: green;
+}
+
 #addProduct {
   color: cadetblue;
   padding-right: 16px;
@@ -53,9 +57,6 @@ body {
   text-decoration: none;
 }
 
-.nav li:hover {
-  background-color: green;
-}
 
 .ProductList {
   display: flex;
