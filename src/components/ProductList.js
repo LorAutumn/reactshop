@@ -53,6 +53,8 @@ function ProductList ()  {
     />
   )
 
+  
+
   const cartComponents = cartDataContext.cartData.map(product => 
     <CartObject 
       key={product.id} 
@@ -68,8 +70,7 @@ function ProductList ()  {
     <div className='ProductList'>
       {/* displays the ProductList component */}
       <div id='list'>{productComponents}</div>
-      <div id='cart'>{cartComponents}<CartTotalValue/></div>
-      
+      <div id='cart'>{cartComponents}<CartTotalValue/></div>  
     </div>
   )
  

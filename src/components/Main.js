@@ -12,7 +12,7 @@ function Main() {
       <div>
         <Switch>
           <Route path="/" component={ProductList} exact/>
-          <Route path="/cart" component={Cart} />
+          {/* <Route path="/cart" component={Cart} /> */}
         </Switch>
       </div>
     </BrowserRouter>
