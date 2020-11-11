@@ -2,16 +2,18 @@
 import React from 'react'
 
 function CartObject (props) {
+
+  const product = props.product
  
   return (
     <div >
       <ul >
-        <li>Artikelnummer: {props.id}</li>
-        <li>{props.name}</li>
-        <li>{props.price} €</li>
-        <p>ammount: {props.value}</p>
-        <p>position value: {props.price * props.value} €</p>
-        <button onClick={() => props.removeItem(props.id)}>remove from cart</button>
+        <li>Artikelnummer: {product.id}</li>
+        <li>{product.name}</li>
+        <li>{product.price} €</li>
+        <p>ammount: {product.value}</p>
+        <p>position value: {product.price * product.value} €</p>
+        <button onClick={() => props.removeItem(product.id)}>remove from cart</button>
         <hr/>
       </ul>
     </div>

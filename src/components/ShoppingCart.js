@@ -15,13 +15,10 @@ function ProductList (props)  {
     cartDataContext.setCartData([...newCart])                 // pushes new Cart to the cartData state
   }
 
+  // maps all products of cartData (Shopping Cart)
   const productComponents = cartDataContext.cartData.map(product => 
     <CartObject 
-      key={product.id} 
-      id={product.id} 
-      name={product.name} 
-      price={product.price} 
-      value={product.value}
+      product={product} 
       removeItem={removeItem}
     />
   )

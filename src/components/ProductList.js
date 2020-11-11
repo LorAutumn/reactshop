@@ -42,23 +42,20 @@ function ProductList ()  {
   }
 
   const productComponents = dataContext.data.map(product => 
-    <ProductObject 
-      key={product.id} 
-      id={product.id} 
-      name={product.name} 
-      price={product.price} 
-      value={product.value} 
+    <ProductObject  
+      product={product}
       addToCart={addToCart} 
     />
   )
 
   const cartComponents = cartDataContext.cartData.map(product => 
     <CartObject 
-      key={product.id} 
-      id={product.id} 
-      name={product.name} 
-      price={product.price} 
-      value={product.value}
+      product={product}  
+      // key={product.id} 
+      // id={product.id} 
+      // name={product.name} 
+      // price={product.price} 
+      // value={product.value}
       removeItem={removeItem}
     />
   )
