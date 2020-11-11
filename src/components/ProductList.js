@@ -47,24 +47,11 @@ function ProductList ()  {
       addToCart={addToCart} 
     />
   )
-
-  const cartComponents = cartDataContext.cartData.map(product => 
-    <CartObject 
-      product={product}  
-      // key={product.id} 
-      // id={product.id} 
-      // name={product.name} 
-      // price={product.price} 
-      // value={product.value}
-      removeItem={removeItem}
-    />
-  )
     
   return (
     <div className='ProductList'>
       {/* displays the ProductList component */}
       <div id='list'>{productComponents}</div>
-      {/* <div id='cart'>{cartComponents}<CartTotalValue/></div>   */}
     </div>
   )
  
