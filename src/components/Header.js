@@ -1,10 +1,10 @@
 import React, {useState, useContext} from 'react'
 import AddProductPop from './AddProductPop'
-import {CartDataContext} from '../App'
+import {CartDataContext, HandleChangeContext} from '../App'
 import ShoppingCart from './ShoppingCart'
 
 // displays the page header with h1 and navbar (class based)
-function Header(props) {
+function Header() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(true)
   const [seen, setSeen] = useState(false)
@@ -12,6 +12,7 @@ function Header(props) {
 
   const cartDataContext = useContext(CartDataContext)
   const cartItemsCount = cartDataContext.cartData.length
+  const handleChange = useContext(HandleChangeContext)
 
   const clickHandler = () => {
     setIsLoggedIn(!isLoggedIn)
@@ -30,7 +31,7 @@ function Header(props) {
       <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
       <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
         <div>
-            {seen ? <AddProductPop handleChange={props.handleChange} toggle={togglePop} /> : null}
+            {seen ? <AddProductPop handleChange={handleChange.handleChangeState} toggle={togglePop} /> : null}
         </div>
         <div>
           {seenCart ? <ShoppingCart toggle={toggleCartPop} /> : null}

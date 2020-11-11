@@ -4,9 +4,6 @@ import {DataContext, HandleChangeContext} from '../App'
 
 function AddProductPop(props) {
   
-  // const {toggle, setToggle} = useState(props)
-  // const {handleChange, setHandleChange} = useState(props)
-
   const dataContext = useContext(DataContext)
   const handleChange = useContext(HandleChangeContext)
 
@@ -39,7 +36,6 @@ function AddProductPop(props) {
         <br/>
         <input name='newProductPrice' type="number" placeholder='price' onChange={passDownData}/>
         <br/>
-        {/* <p>{data}</p> */}
         <br/>
         <input name='button' type="button" value='add product' onClick={addNewProduct}/>
       </div>
