@@ -31,7 +31,7 @@ function Header() {
       <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
       <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
         <div>
-            {seen ? <AddProductPop handleChange={handleChange.handleChangeState} toggle={togglePop} /> : null}
+            {seen ? <AddProductPop toggle={togglePop} /> : null}
         </div>
         <div>
           {seenCart ? <ShoppingCart toggle={toggleCartPop} /> : null}
