@@ -4,8 +4,8 @@ import React from 'react'
 function CartObject (props) {
  
   return (
-    <div className='popup'>
-      <ul className='popup-content'>
+    <div >
+      <ul >
         <li>Artikelnummer: {props.id}</li>
         <li>{props.name}</li>
         <li>{props.price} €</li>
