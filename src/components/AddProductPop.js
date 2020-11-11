@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import {DataContext, HandleChangeContext} from '../App'
 
 
-function PopUp(props) {
+function AddProductPop(props) {
   
   // const {toggle, setToggle} = useState(props)
   // const {handleChange, setHandleChange} = useState(props)
@@ -47,5 +47,5 @@ function PopUp(props) {
   )
 }
 
-export default PopUp
+export default AddProductPop
 

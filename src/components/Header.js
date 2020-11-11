@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react'
-import PopUp from './PopUp'
+import AddProductPop from './AddProductPop'
 import {CartDataContext} from '../App'
 import ShoppingCart from './ShoppingCart'
 
@@ -29,12 +29,12 @@ function Header(props) {
       <h1>Shop Home</h1>
       <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
       <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
-      <div>
-          {seen ? <PopUp handleChange={props.handleChange} toggle={togglePop} /> : null}
-      </div>
-      <div>
-        {seenCart ? <ShoppingCart toggle={toggleCartPop} /> : null}
-      </div>      
+        <div>
+            {seen ? <AddProductPop handleChange={props.handleChange} toggle={togglePop} /> : null}
+        </div>
+        <div>
+          {seenCart ? <ShoppingCart toggle={toggleCartPop} /> : null}
+        </div>      
       <br/>
       <br/>        
       <nav>
