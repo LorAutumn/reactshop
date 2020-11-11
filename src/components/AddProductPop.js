@@ -1,14 +1,16 @@
 import React, {useContext} from 'react'
 import {DataContext, HandleChangeContext} from '../App'
+import {ToggleContext} from './Header'
 
 
 function AddProductPop(props) {
   
   const dataContext = useContext(DataContext)
   const handleChange = useContext(HandleChangeContext)
+  const toggle = useContext(ToggleContext)
 
   const handleClick = () => {
-    props.toggle()
+    toggle.togglePop()
   }
 
   // writes data of form field to app->state
@@ -24,7 +26,7 @@ function AddProductPop(props) {
       value: null
       }
     ])
-    props.toggle()
+    toggle.togglePop()
   }
   
   return(

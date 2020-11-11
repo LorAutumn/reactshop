@@ -30,7 +30,7 @@ function App() {
             <HandleChangeContext.Provider value={{handleChangeState: handleChange, handleChangeList: handleChangeList}}>
               <CartDataContext.Provider value={{cartData: cartData, setCartData: setCartData}}>
                 <CartSumContext.Provider value={{cartSum: cartSum, setCartSum: setCartSum}}>
-                  <Header setData={setData}/>
+                  <Header/>
                   <Main />
                   <Footer />
                 </CartSumContext.Provider>

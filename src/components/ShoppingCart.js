@@ -3,11 +3,13 @@ import ProductObject from './products/ProductObject'
 import CartObject from './products/CartObject'
 import {CartDataContext} from '../App'
 import CartTotalValue from './CartTotalValue'
+import {ToggleContext} from './Header'
 
 // a list of all products that can be ordered (class based)
-function ProductList (props)  {
+function ProductList ()  {
   const cartDataContext = useContext(CartDataContext)
   const cartData = cartDataContext.cartData
+  const toggle = useContext(ToggleContext)
 
   // removes an item from the cart
   const removeItem = (id) => {
@@ -29,7 +31,7 @@ function ProductList (props)  {
     <div className='popup'>
     {/* displays the ProductList component */}
       <div className='popup-content'>
-        <span className='close' onClick={props.toggle}>&times;</span>
+        <span className='close' onClick={toggle.toggleCartPop}>&times;</span>
         <h1>Shopping Cart</h1>
         {productComponents}
         <CartTotalValue />
