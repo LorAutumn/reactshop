@@ -41,7 +41,6 @@ function ProductList ()  {
     cartDataContext.setCartData([...newCart])                 // pushes new Cart to the cartData state
   }
 
- 
   const productComponents = dataContext.data.map(product => 
     <ProductObject 
       key={product.id} 
@@ -52,8 +51,6 @@ function ProductList ()  {
       addToCart={addToCart} 
     />
   )
-
-  
 
   const cartComponents = cartDataContext.cartData.map(product => 
     <CartObject 
@@ -70,7 +67,7 @@ function ProductList ()  {
     <div className='ProductList'>
       {/* displays the ProductList component */}
       <div id='list'>{productComponents}</div>
-      <div id='cart'>{cartComponents}<CartTotalValue/></div>  
+      {/* <div id='cart'>{cartComponents}<CartTotalValue/></div>   */}
     </div>
   )
  

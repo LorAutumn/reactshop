@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import ProductObject from './products/ProductObject'
 import CartObject from './products/CartObject'
 import {CartDataContext} from '../App'
+import CartTotalValue from './CartTotalValue'
 
 // a list of all products that can be ordered (class based)
 function ProductList (props)  {
@@ -30,12 +31,13 @@ function ProductList (props)  {
   // <div className='ProductList' id='list'>
     <div className='popup'>
     {/* displays the ProductList component */}
-    <h1>Shopping Cart</h1>
-    <div className='popup-content'>
-    <span className='close' onClick={props.toggle}>&times;</span>
-      {productComponents}
+      <div className='popup-content'>
+        <span className='close' onClick={props.toggle}>&times;</span>
+        <h1>Shopping Cart</h1>
+        {productComponents}
+        <CartTotalValue />
+      </div>
     </div>
-  </div>
   )
  
 }

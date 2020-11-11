@@ -71,7 +71,7 @@ body {
   grid-template-columns: 1fr 1fr;
   overflow: auto;
   height: auto;
-  flex-basis: 80%;
+  flex-basis: 98.5%;
 }
 
 #cart {
