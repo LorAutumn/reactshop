@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
-import productsData from './components/products/productsData/productsData'
+import productsData from './components/products/productsData/productsData.json'
 import shoppingCartData from './components/products/productsData/shoppingCartData'
 
 export const DataContext = React.createContext()
