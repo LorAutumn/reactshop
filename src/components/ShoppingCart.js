@@ -5,7 +5,7 @@ import {CartDataContext} from '../App'
 import CartTotalValue from './CartTotalValue'
 import {ToggleContext} from './Header'
 
-// a list of all products that can be ordered (class based)
+// shopping cart wich lists all products added to the cart
 function ProductList ()  {
   const cartDataContext = useContext(CartDataContext)
   const cartData = cartDataContext.cartData

@@ -40,7 +40,7 @@ function AddProductPop(props) {
         <br/>
         <br/>
         <input name='button' type="button" value='add product' onClick={addNewProduct}/>
-      </div>
+      </div>g
     </div>
   )
 }
