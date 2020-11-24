@@ -40,13 +40,20 @@ body {
   float: right;
 }
 
-
+/* Warenkorb button at header */
 .shoppingCart {
   float: right;
+  border-radius: 5%;
   display: block;
   text-align: center;
   padding: 16px;
   text-decoration: none;
+  animation: flash linear 1s;
+}
+@keyframes flash {
+  0% { opacity: 1;}
+  50% {opacity: .1;}
+  100% {opacity: 1;}
 }
 
 .home {
@@ -105,7 +112,8 @@ body {
 }
 
 .popup-content {
-  background-color: white;
+  background-color: grey;
+  color: white;
   position: absolute;
   top: 20%;
   left: 30%;
@@ -115,6 +123,10 @@ body {
   border-radius: 5px;
   border: 2px solid black;
   overflow: auto;
+}
+
+.popup-content.h1 {
+  color: blue;
 }
 
 /* styling for close button of PopUp */
