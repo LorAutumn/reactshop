@@ -35,4 +35,21 @@ body {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+
+.ProductList {
+  list-style-type: none;
+}
+
+.product-element {
+  width: 80%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+}
+
+.product-element li {
+  list-style-type: none;
+}
 /*# sourceMappingURL=styles.css.map */

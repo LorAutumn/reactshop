@@ -1,6 +1,18 @@
-body {
-    font-family: 'Calibri', 'Arial';
-    width: 95%;
-    background: rgb(117, 117, 117);
-    margin: auto;
+.ProductList {
+    list-style-type: none;
 }
+
+.product-element {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat((2, auto));
+
+    li {
+        list-style-type: none;
+    }
+}
+
+
+
+

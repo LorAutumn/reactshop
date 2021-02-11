@@ -49,9 +49,9 @@ function ProductList ()  {
   )
     
   return (
-    <div className='ProductList'>
+    <div class='ProductList'>
       {/* displays the ProductList component */}
-      <div id='list'>{productComponents}</div>
+      <div class='product-element'>{productComponents}</div>
     </div>
   )
  

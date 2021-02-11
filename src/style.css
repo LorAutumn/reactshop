@@ -72,7 +72,7 @@ body {
 }
 
 /* list of items in main section - items for sale */
-#list {
+.list {
   color: white;
   background: grey;
   display: grid;

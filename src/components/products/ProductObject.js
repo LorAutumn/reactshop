@@ -13,9 +13,9 @@ function ProductObject(props) {
   }
 
   return (
-    <ul>
-      <li>{product.id}</li>
+    <ul class='productObject'>
       <li>{product.name}</li>
+      <li>Art.-Nr.: {product.id}</li>
       <li>{product.price} €</li>
       <input type="number" className="input" id={product.id} onKeyPress={onKeyPress}></input>
       <button onClick={() => props.addToCart(product.id)}>add to cart</button>
