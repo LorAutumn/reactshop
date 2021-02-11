@@ -2,5 +2,37 @@ body {
   font-family: 'Calibri', 'Arial';
   width: 95%;
   background: #757575;
+  margin: auto;
+}
+
+.header {
+  height: 200px;
+  background-color: #c8c8c8;
+}
+
+.header-brand-wrapper {
+  float: left;
+}
+
+.header-user-section {
+  float: right;
+}
+
+.header-navbar {
+  float: right;
+  margin-top: 0px;
+}
+
+.header-navbar :hover {
+  color: #005a00;
+}
+
+.header-navbar-links li {
+  float: right;
+  list-style-type: none;
+  color: green;
+  margin-left: 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 /*# sourceMappingURL=styles.css.map */

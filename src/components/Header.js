@@ -38,20 +38,19 @@ function Header() {
             <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
             <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
           </div>
+          <br></br>
+          <nav class='header-navbar'>
+            <ul class='header-navbar-links'>
+              <li class='home'>Home</li>
+              <li class='shoppingCart' onClick={toggleCartPop}>Warenkorb ({cartItemsCount})</li>
+            </ul>
+          </nav>
           <div class='add-product-pop-up'>
               {seen ? <AddProductPop toggle={togglePop} /> : null}
           </div>
           <div class='shopping-cart-pop-up'>
             {seenCart ? <ShoppingCart toggle={toggleCartPop} /> : null}
-          </div>      
-          <br/>
-          <br/>        
-          <nav class='header-navbar'>
-            <ul className='header-navbar-links'>
-              <li className='home'>Home</li>
-              <li className='shoppingCart' onClick={toggleCartPop}>Warenkorb ({cartItemsCount})</li>
-            </ul>
-          </nav>
+          </div>        
         </div>
       </header>
       </ToggleContext.Provider>
