@@ -29,25 +29,31 @@ function Header() {
   
   return(
     <ToggleContext.Provider value={{togglePop, toggleCartPop}}>
-      <div className='header'>
-        <h1>Shop Home</h1>
-        <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
-        <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
-          <div>
+      <header className='header'>
+        <div class='container'>
+          <div class='header-brand-wrapper'>
+            <h1 class='header-brand'>Shop Home</h1>
+          </div>
+          <div class='header-user-section'>
+            <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
+            <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
+          </div>
+          <div class='add-product-pop-up'>
               {seen ? <AddProductPop toggle={togglePop} /> : null}
           </div>
-          <div>
+          <div class='shopping-cart-pop-up'>
             {seenCart ? <ShoppingCart toggle={toggleCartPop} /> : null}
           </div>      
-        <br/>
-        <br/>        
-        <nav>
-          <ul className='nav'>
-            <li className='home'>Home</li>
-            <li className='shoppingCart' onClick={toggleCartPop}>Warenkorb ({cartItemsCount})</li>
-          </ul>
-        </nav>
-      </div>
+          <br/>
+          <br/>        
+          <nav class='header-navbar'>
+            <ul className='header-navbar-links'>
+              <li className='home'>Home</li>
+              <li className='shoppingCart' onClick={toggleCartPop}>Warenkorb ({cartItemsCount})</li>
+            </ul>
+          </nav>
+        </div>
+      </header>
       </ToggleContext.Provider>
   )
 }
