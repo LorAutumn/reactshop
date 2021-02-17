@@ -30,8 +30,8 @@ function AddProductPop(props) {
   }
   
   return(
-    <div class='popup'>
-      <div class='popup-content'>
+    <div class='popup-add'>
+      <div class='popup-add-content'>
         <span class='close' onClick={handleClick}>&times;</span>
         <p>Add a product!</p>
         <input name='newProductName' type="text" placeholder='product name' onChange={passDownData}/>
