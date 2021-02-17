@@ -1,6 +1,25 @@
+html {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Calibri', 'Arial';
-    width: 95%;
-    background: rgb(117, 117, 117);
-    margin: auto;
+    width: 100%;
+    height: 100vh;
+    //background: rgb(117, 117, 117);
+    margin: 0;
+}
+
+#root {
+    height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 1fr 50px;
+    height: 100vh;
 }

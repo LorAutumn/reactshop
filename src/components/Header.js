@@ -2,10 +2,11 @@ import React, {useState, useContext} from 'react'
 import AddProductPop from './AddProductPop'
 import {CartDataContext, HandleChangeContext} from '../App'
 import ShoppingCart from './ShoppingCart'
+import {BrowserRouter, Route, Link} from 'react-router-dom'
 
 export const ToggleContext = React.createContext()
 
-// displays the page header with h1 and navbar (class based)
+// displays the page header with h1 and navbar (className based)
 function Header() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(true)
@@ -26,36 +27,67 @@ function Header() {
 
   const toggleCartPop = () => setSeenCart(!seenCart)
   
-  
   return(
+    <BrowserRouter forceRefresh={true}>
     <ToggleContext.Provider value={{togglePop, toggleCartPop}}>
-      <header className='header'>
-        <div class='container'>
-          <div class='header-brand-wrapper'>
-            <h1 class='header-brand'>Shop Home</h1>
+        <header className='header'>
+          <div className='header-brand-wrapper'>
+            <h1 className='header-brand'>Shop Home</h1>
           </div>
-          <div class='header-user-section'>
+          <nav className='header-navbar'>
+            <ul className='header-navbar-links'>
+              <Link to='/'><li className='home'>Home</li></Link>          
+              <Link to='/cart'><li className="shoppingCart">Warenkorb ({cartItemsCount})</li></Link>
+            </ul>
+          </nav>
+          <div className='header-user-section'>
             <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
             <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
           </div>
           <br></br>
-          <nav class='header-navbar'>
-            <ul class='header-navbar-links'>
-              <li class='home'>Home</li>
-              <li class='shoppingCart' onClick={toggleCartPop}>Warenkorb ({cartItemsCount})</li>
-            </ul>
-          </nav>
-          <div class='add-product-pop-up'>
+          <div className='add-product-pop-up'>
               {seen ? <AddProductPop toggle={togglePop} /> : null}
           </div>
-          <div class='shopping-cart-pop-up'>
+          <div className='shopping-cart-pop-up'>
             {seenCart ? <ShoppingCart toggle={toggleCartPop} /> : null}
-          </div>        
-        </div>
-      </header>
-      </ToggleContext.Provider>
+          </div> 
+        </header>
+    </ToggleContext.Provider>
+      </BrowserRouter>
   )
+  
 }
 
 export default Header
+
+
+
+/*
+return(
+    <ToggleContext.Provider value={{togglePop, toggleCartPop}}>
+      <header className='header'>
+        <div className='header-brand-wrapper'>
+          <h1 className='header-brand'>Shop Home</h1>
+        </div>
+        <nav className='header-navbar'>
+          <ul className='header-navbar-links'>
+            <li className='home'>Home</li>
+            <li className='shoppingCart' onClick={toggleCartPop}>Warenkorb ({cartItemsCount})</li>
+          </ul>
+        </nav>
+        <div className='header-user-section'>
+          <button id='isLoggedIn' onClick={clickHandler}>{isLoggedIn ? 'log out' : 'log in'}</button>
+          <button id='addProduct' style={{display: isLoggedIn ? '' : 'none'}} onClick={togglePop}>add Product</button>
+        </div>
+        <br></br>
+        <div className='add-product-pop-up'>
+            {seen ? <AddProductPop toggle={togglePop} /> : null}
+        </div>
+        <div className='shopping-cart-pop-up'>
+          {seenCart ? <ShoppingCart toggle={toggleCartPop} /> : null}
+        </div> 
+      </header>
+      </ToggleContext.Provider>
+  )
+*/
 

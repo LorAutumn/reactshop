@@ -4,9 +4,10 @@ import CartObject from './products/CartObject'
 import {CartDataContext} from '../App'
 import CartTotalValue from './CartTotalValue'
 import {ToggleContext} from './Header'
+import {BrowserRouter, Link} from 'react-router-dom'
 
 // shopping cart wich lists all products added to the cart
-function ProductList ()  {
+function ShoppingCart ()  {
   const cartDataContext = useContext(CartDataContext)
   const cartData = cartDataContext.cartData
   const toggle = useContext(ToggleContext)
@@ -31,7 +32,7 @@ function ProductList ()  {
     <div className='popup'>
     {/* displays the ProductList component */}
       <div className='popup-content'>
-        <span className='close' onClick={toggle.toggleCartPop}>&times;</span>
+        <Link to='/'><span className='close'>&times;</span></Link>
         <h1>Shopping Cart</h1>
         {productComponents}
         <CartTotalValue />
@@ -41,4 +42,6 @@ function ProductList ()  {
  
 }
 
-export default ProductList
+export default ShoppingCart
+
+//<span className='close' onClick={toggle.toggleCartPop}>&times;</span>

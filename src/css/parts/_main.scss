@@ -1,7 +1,20 @@
+.main {
+    grid-area: main;
+}
+
 .ProductList {
     list-style-type: none;
 }
 
+.product-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/*
 .product-element {
     width: 80%;
     margin: auto;
@@ -12,6 +25,7 @@
         list-style-type: none;
     }
 }
+*/
 
 
 

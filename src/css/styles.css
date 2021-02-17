@@ -1,39 +1,154 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   font-family: 'Calibri', 'Arial';
-  width: 95%;
-  background: #757575;
-  margin: auto;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
 }
 
+#root {
+  height: 100vh;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'header' 'main' 'footer';
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 150px 1fr 50px;
+      grid-template-rows: 150px 1fr 50px;
+  height: 100vh;
+}
+
+/*
+@mixin header-button() {
+	float: left;
+    margin-left: 10px;
+    list-style-type: none;
+    color: rgb(10, 71, 51);
+    transition: all 0.5s;
+    border: 0.2px solid rgb(85, 183, 207);
+    border-radius: 2px;
+    padding: 10px;
+    background-color: rgb(101, 187, 209);
+}
+*/
 .header {
-  height: 200px;
-  background-color: #c8c8c8;
-}
-
-.header-brand-wrapper {
-  float: left;
-}
-
-.header-user-section {
-  float: right;
-}
-
-.header-navbar {
-  float: right;
-  margin-top: 0px;
-}
-
-.header-navbar :hover {
-  color: #005a00;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  background-color: gray;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5rem;
 }
 
 .header-navbar-links li {
-  float: right;
+  float: left;
+  margin-left: 8px;
+  margin-right: 4px;
   list-style-type: none;
-  color: green;
-  margin-left: 10px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  margin-bottom: 8px;
+}
+
+.header-user-section {
+  position: absolute;
+  right: 20px;
+  top: 2px;
+}
+
+/*
+.header {
+    grid-area: header;
+    //height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //grid-template-columns: repeat(12, 1fr );
+    //grid-template-rows: 1;
+    background-color: rgb(180, 180, 180);
+}
+/*
+.header-user-section {
+    grid-column: 12 / 13;
+    float: left;
+
+    :hover {
+        color: rgb(0, 90, 0);
+        background-color: rgb(163, 196, 204);
+    }
+    
+    button {
+        @include header-button();
+        padding: 4px;
+        background-color: rgb(120, 120, 120);
+        color: rgb(255, 255, 255);
+        border: none;
+    }
+}
+
+.header-navbar {
+    //grid-column: 8 / 11;
+}
+
+.header-navbar-links {
+    float: right;
+
+    :hover {
+        color: rgb(0, 90, 0);
+        background-color: rgb(163, 196, 204);
+    }
+
+    li {
+       @include header-button() 
+    }
+}
+
+
+.header-brand-wrapper {
+    grid-column: 1 / 4;
+    margin-left: 20px;
+    font-size: larger;
+    color: rgb(114, 91, 31)
+}
+
+.shopping-cart-pop-up {
+    grid-column: 3 / 11;
+}
+
+.popup {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.popup-content {
+    background-color: grey;
+    color: white;
+    //position: absolute;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    overflow: auto;
+}
+*/
+.main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
 }
 
 .ProductList {
@@ -41,15 +156,40 @@ body {
 }
 
 .product-element {
-  width: 80%;
-  margin: auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (auto)[2];
-      grid-template-columns: repeat(2, auto);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.product-element li {
-  list-style-type: none;
+/*
+.product-element {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat((2, auto));
+
+    li {
+        list-style-type: none;
+    }
+}
+*/
+.footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=styles.css.map */

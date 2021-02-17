@@ -1,0 +1,36 @@
+.header {
+    height: 100px;
+    background-color: rgb(200, 200, 200);
+}
+
+.header-brand-wrapper {
+    float: left;
+}
+
+.header-user-section {
+    float: right;
+    position: absolute;
+}
+
+.header-navbar {
+    float: right;
+    margin-top: 0px;
+
+    :hover {
+        color: rgb(0, 90, 0);
+        background-color: rgb(163, 196, 204);
+    }
+}
+
+.header-navbar-links li {
+    float: right;
+    list-style-type: none;
+    color: rgb(10, 71, 51);
+    margin-left: 5px;
+    transition: all 0.5s;
+    border: 0.2px solid rgb(85, 183, 207);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(101, 187, 209);
+    
+}

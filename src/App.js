@@ -30,9 +30,17 @@ function App() {
             <HandleChangeContext.Provider value={{handleChangeState: handleChange, handleChangeList: handleChangeList}}>
               <CartDataContext.Provider value={{cartData: cartData, setCartData: setCartData}}>
                 <CartSumContext.Provider value={{cartSum: cartSum, setCartSum: setCartSum}}>
-                  <Header/>
-                  <Main />
-                  <Footer />
+                  <div className="grid-container">
+                    <div className="header-index">
+                      <Header/>
+                    </div>
+                    <div className="main-index">
+                      <Main />
+                    </div>
+                    <div className="footer-index">
+                      <Footer />
+                    </div>
+                  </div>
                 </CartSumContext.Provider>
               </CartDataContext.Provider>
             </ HandleChangeContext.Provider>
