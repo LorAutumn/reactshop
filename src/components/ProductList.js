@@ -4,6 +4,7 @@ import CartObject from './products/CartObject'
 import {DataContext} from '../App'
 import {CartDataContext} from '../App'
 import CartTotalValue from './CartTotalValue'
+import Cart from './ShoppingCart'
 
 
 // a list of all products that can be ordered (class based)
@@ -52,6 +53,7 @@ function ProductList ()  {
     <div class='ProductList'>
       {/* displays the ProductList component */}
       <div class='product-element'>{productComponents}</div>
+      <div><Cart/></div>
     </div>
   )
  

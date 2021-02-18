@@ -8,7 +8,8 @@ function ProductObject(props) {
   // triggers handleClick at keyPress of 'enter'
   const onKeyPress = (event) => {
     if (event.charCode === 13) {
-      props.addToCart(props.id)
+      console.log(product.id)
+      props.addToCart(product.id)
     }
   }
 
