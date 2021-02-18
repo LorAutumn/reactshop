@@ -1,0 +1,7 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env" // makes server runnable from terminal and lets node understand ES6
+        ]
+    ]
+}

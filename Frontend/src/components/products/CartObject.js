@@ -6,7 +6,7 @@ function CartObject (props) {
   const product = props.product
  
   return (
-    <div className='cart-object'>
+    <div key={product.id} className='cart-object'>
       <ul className='cart-items-list'>
         <li>Artikelnummer: {product.id}</li>
         <li>{product.name}</li>

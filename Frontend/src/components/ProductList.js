@@ -43,7 +43,7 @@ function ProductList ()  {
   }
 
   const productComponents = dataContext.data.map(product => 
-    <ProductObject  
+    <ProductObject
       product={product}
       addToCart={addToCart} 
     />
