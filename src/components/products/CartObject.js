@@ -7,7 +7,7 @@ function CartObject (props) {
  
   return (
     <div className='cart-object'>
-      <ul className='cart-item'>
+      <ul className='cart-items-list'>
         <li>Artikelnummer: {product.id}</li>
         <li>{product.name}</li>
         <li>{product.price} €</li>

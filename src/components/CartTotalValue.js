@@ -18,7 +18,7 @@ function CartTotalValue() {
   useEffect(sumUp, [cartData])
 
   return(
-    <div>
+    <div className='cart-total-value'>
       <p>cart total value: {cartSumContext.cartSum} €</p>
       <p>vat: {cartSumContext.cartSum * .16} €</p>
       <p>total incl. vat (16 %): {cartSumContext.cartSum * 1.16} €</p>

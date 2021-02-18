@@ -29,9 +29,9 @@ function ShoppingCart ()  {
     
   return (
   // <div className='ProductList' id='list'>
-    <div className='popup'>
+    <div className='shopping-cart'>
     {/* displays the ProductList component */}
-      <div className='popup-content'>
+      <div className='shopping-cart-content'>
         <Link to='/'><span className='close'>&times;</span></Link>
         <h1>Shopping Cart</h1>
         {productComponents}

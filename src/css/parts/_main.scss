@@ -39,20 +39,18 @@
     overflow: auto;
 }
 
-
-/*
-.product-element {
-    width: 80%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat((2, auto));
-
-    li {
-        list-style-type: none;
-    }
+/* Shoppin Cart Section */
+.cart-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-*/
-
+.cart-items-list {
+    list-style-type: none;
+}
+.cart-total-value {
+    align-items: center;
+}
 
 
 
