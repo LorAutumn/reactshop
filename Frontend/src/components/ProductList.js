@@ -5,6 +5,8 @@ import {DataContext} from '../App'
 import {CartDataContext} from '../App'
 import CartTotalValue from './CartTotalValue'
 import Cart from './ShoppingCart'
+import productsState from '../reducers/productReducers'
+import {productsState} from '../reducers/productReducers'
 
 
 // a list of all products that can be ordered (class based)
@@ -12,6 +14,17 @@ function ProductList ()  {
   const dataContext = useContext(DataContext)
   const cartDataContext = useContext(CartDataContext)
   const cartData = cartDataContext.cartData
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const {data} = await axios.get('api/products')
+      setData(data)
+    }
+    fetchData()
+    return () => {
+      //
+    }
+  }, [])
     
   
   
@@ -50,6 +63,8 @@ function ProductList ()  {
   )
     
   return (
+    loading ? <div>Loading...</div> :
+    error ? <div>{error}</div> :
     <div className='ProductList'>
       {/* displays the ProductList component */}
       <div className='product-element'>{productComponents}</div>
