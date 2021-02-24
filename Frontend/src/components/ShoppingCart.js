@@ -20,7 +20,8 @@ function ShoppingCart ()  {
 
   // maps all products of cartData (Shopping Cart)
   const productComponents = cartDataContext.cartData.map(product => 
-    <CartObject 
+    <CartObject
+      key={product.id} 
       product={product} 
       removeItem={removeItem}
     />

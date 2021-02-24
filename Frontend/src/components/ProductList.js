@@ -1,19 +1,20 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import ProductObject from './products/ProductObject'
 import CartObject from './products/CartObject'
 import {DataContext} from '../App'
 import {CartDataContext} from '../App'
 import CartTotalValue from './CartTotalValue'
 import Cart from './ShoppingCart'
-import productsState from '../reducers/productReducers'
 import {productsState} from '../reducers/productReducers'
-
+import axios from 'axios'
 
 // a list of all products that can be ordered (class based)
 function ProductList ()  {
   const dataContext = useContext(DataContext)
   const cartDataContext = useContext(CartDataContext)
   const cartData = cartDataContext.cartData
+  const data = dataContext.data
+  const setData = dataContext.setData
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +23,7 @@ function ProductList ()  {
     }
     fetchData()
     return () => {
-      //
+      console.log(data)
     }
   }, [])
     
@@ -63,8 +64,8 @@ function ProductList ()  {
   )
     
   return (
-    loading ? <div>Loading...</div> :
-    error ? <div>{error}</div> :
+    //loading ? <div>Loading...</div> :
+    //error ? <div>{error}</div> :
     <div className='ProductList'>
       {/* displays the ProductList component */}
       <div className='product-element'>{productComponents}</div>
