@@ -1,11 +1,8 @@
 import React, {useContext, useEffect} from 'react'
 import ProductObject from './products/ProductObject'
-import CartObject from './products/CartObject'
 import {DataContext} from '../App'
 import {CartDataContext} from '../App'
-import CartTotalValue from './CartTotalValue'
 import Cart from './ShoppingCart'
-import {productsState} from '../reducers/productReducers'
 import axios from 'axios'
 
 // a list of all products that can be ordered (class based)

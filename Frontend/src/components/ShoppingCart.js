@@ -1,5 +1,4 @@
 import React, {useContext} from 'react'
-import ProductObject from './products/ProductObject'
 import CartObject from './products/CartObject'
 import {CartDataContext} from '../App'
 import CartTotalValue from './CartTotalValue'

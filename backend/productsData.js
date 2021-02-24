@@ -23,6 +23,12 @@ export default {
       "name": "Besteck",
       "price": 8,
       "value": 0
+    },
+    {
+      "id": 5,
+      "name": "Gabel",
+      "price": 8,
+      "value": 0
     }
   ]
 }
