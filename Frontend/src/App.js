@@ -20,18 +20,6 @@ function App() {
   const [cartData, setCartData] = useState(shoppingCartData)        // state for items in shopping cart
   const [cartSum, setCartSum] = useState(0)                         // state for cart total sum
 
-  // fetch products data from express server
- /* useEffect(() => {
-    const fetchData = async () => {
-      const {data} = await axios.get('api/products')
-      setData(data)
-    }
-    fetchData()
-    return () => {
-      //
-    }
-  }, [])
-  */
  
   // container for handleChange state deposit (temp)
   const handleChange = (event) => {

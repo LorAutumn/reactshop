@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useReducer, useState, useDispatch} from 'react'
 import ProductObject from './products/ProductObject'
-import {DataContext} from '../App'
-import {CartDataContext} from '../App'
+import {DataContext, CartDataContext} from '../App'
+import {LoadingErrorContext} from './Main'
 import Cart from './ShoppingCart'
 import axios from 'axios'
 
@@ -9,26 +9,16 @@ import axios from 'axios'
 function ProductList ()  {
   const dataContext = useContext(DataContext)
   const cartDataContext = useContext(CartDataContext)
+  const loadingErrorContext = useContext(LoadingErrorContext)
   const cartData = cartDataContext.cartData
   const data = dataContext.data
   const setData = dataContext.setData
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState('')
-  
-  // handles api fetch on site load
-  useEffect(() => {
-      axios.get('/api/products')
-          .then(response => {
-              setLoading(false)
-              setData(response.data)
-              setError('')
-          })
-          .catch(error => {
-              setLoading(false)
-              setError('something went wrong')
-          })
-  }, [])
-  
+  const loading = loadingErrorContext.loading
+  const error = loadingErrorContext.error
+
+  console.log('data:', data)
+  console.log(loading)
+  console.log(error)
   
   // adds a product to the cart
   const addToCart = (id) => {                            
