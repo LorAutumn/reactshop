@@ -16,9 +16,6 @@ function ProductList ()  {
   const loading = loadingErrorContext.loading
   const error = loadingErrorContext.error
 
-  console.log('data:', data)
-  console.log(loading)
-  console.log(error)
   
   // adds a product to the cart
   const addToCart = (id) => {                            
