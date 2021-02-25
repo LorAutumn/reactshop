@@ -24,10 +24,9 @@ function Main() {
   useEffect(() => {
   axios.get('/api/products')
       .then(response => {
-          setLoading(false)
-          setData(response.data)
-          setError('')
-          console.logloading('load'+loading)
+        setLoading(false)
+        setData(response.data)
+        setError('')
       })
       .catch(error => {
           setLoading(false)
