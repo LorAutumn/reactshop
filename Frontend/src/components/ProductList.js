@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useEffect, useReducer, useState, useDispatch} from 'react'
 import ProductObject from './products/ProductObject'
 import {DataContext} from '../App'
 import {CartDataContext} from '../App'
@@ -12,18 +12,22 @@ function ProductList ()  {
   const cartData = cartDataContext.cartData
   const data = dataContext.data
   const setData = dataContext.setData
-
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+  
+  // handles api fetch on site load
   useEffect(() => {
-    const fetchData = async () => {
-      const {data} = await axios.get('api/products')
-      setData(data)
-    }
-    fetchData()
-    return () => {
-      console.log(data)
-    }
+      axios.get('/api/products')
+          .then(response => {
+              setLoading(false)
+              setData(response.data)
+              setError('')
+          })
+          .catch(error => {
+              setLoading(false)
+              setError('something went wrong')
+          })
   }, [])
-    
   
   
   // adds a product to the cart
@@ -61,8 +65,8 @@ function ProductList ()  {
   )
     
   return (
-    //loading ? <div>Loading...</div> :
-    //error ? <div>{error}</div> :
+    loading ? <div>Loading...</div> :
+    error ? <div>{error}</div> :
     <div className='ProductList'>
       {/* displays the ProductList component */}
       <div className='product-element'>{productComponents}</div>
