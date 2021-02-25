@@ -14,7 +14,7 @@ function ProductObject(props) {
   }
 
   return (
-    <ul key={product.id} class='product-object'>
+    <ul key={product.id} className='product-object'>
       <li>{product.name}</li>
       <li>Art.-Nr.: {product.id}</li>
       <li>{product.price} €</li>

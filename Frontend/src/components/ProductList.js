@@ -46,6 +46,7 @@ function ProductList ()  {
 
   const productComponents = dataContext.data.map(product => 
     <ProductObject
+      key={product.id}
       product={product}
       addToCart={addToCart} 
     />
