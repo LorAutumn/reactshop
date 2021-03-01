@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useReducer, useState, useDispatch} from 'r
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ProductList from './ProductList'
 import Cart from './ShoppingCart'
-import ShoppingCart from './ShoppingCart'
+import ProductDetailsPage from './ProductDetailsPage'
 import {DataContext} from '../App'
 import {CartDataContext} from '../App'
 import axios from 'axios'
@@ -43,8 +43,8 @@ function Main() {
           </div>
           <Switch>
             <Route path="/" component={ProductList} exact />
+            <Route path='/:id' component={ProductDetailsPage} exact/>
             <Route path="/cart" component={Cart} exact/>
-            {/* <Route path="/cart" component={Cart} /> */}
           </Switch>
         </div>
       </LoadingErrorContext.Provider>
