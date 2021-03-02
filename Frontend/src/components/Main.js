@@ -1,10 +1,4 @@
-import React, {
-    useContext,
-    useEffect,
-    useReducer,
-    useState,
-    useDispatch,
-} from 'react'
+import React, { useContext, useEffect, useState, useDispatch } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ProductList from './ProductList'
 import Cart from './ShoppingCart'
@@ -42,20 +36,19 @@ function Main() {
     return (
         <BrowserRouter>
             <LoadingErrorContext.Provider
-                value={{ loading: loading, error: error }}
-            >
+                value={{ loading: loading, error: error }}>
                 <div className='main'>
                     <div className='cart-button'>
                         <button>Cart</button>
                     </div>
                     <Switch>
                         <Route path='/' component={ProductList} exact />
+                        <Route path='/cart' component={Cart} exact />
                         <Route
                             path='/:id'
                             component={ProductDetailsPage}
                             exact
                         />
-                        <Route path='/cart' component={Cart} exact />
                     </Switch>
                 </div>
             </LoadingErrorContext.Provider>
