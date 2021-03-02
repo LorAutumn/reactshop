@@ -1,5 +1,3 @@
-const shoppingCartData = [
-
-]
+const shoppingCartData = []
 
 export default shoppingCartData
