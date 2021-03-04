@@ -1,0 +1,26 @@
+.product-details-header {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.product-details-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: flex-start;
+    margin-left: 20px;
+}
+
+.item-description,
+.cart-section {
+    ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-between;
+    }
+}

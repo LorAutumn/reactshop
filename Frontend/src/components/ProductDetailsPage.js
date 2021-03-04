@@ -18,11 +18,23 @@ function ProductsDetailsPage() {
     return !product ? (
         <div>loading...</div>
     ) : (
-        <div>
-            <h1>ProductDetails</h1>
-            <p>{product.id}</p>
-            <p>{product.name}</p>
-            <p>{product.price}</p>
+        <div classname='product-details-container'>
+            <h1 className='product-details-header'>ProductDetails</h1>
+            <div className='product-details-wrapper'>
+                <div className='item-description'>
+                    <ul>
+                        <li>{product.id}</li>
+                        <li>{product.name}</li>
+                        <li>{product.price}</li>
+                    </ul>
+                </div>
+                <div className='cart-section'>
+                    <ul>
+                        <li>add to cart</li>
+                        <li>item test</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }
