@@ -18,7 +18,7 @@ function ProductsDetailsPage() {
     return !product ? (
         <div>loading...</div>
     ) : (
-        <div classname='product-details-container'>
+        <div className='product-details-container'>
             <h1 className='product-details-header'>ProductDetails</h1>
             <div className='product-details-wrapper'>
                 <div className='item-description'>
