@@ -21,6 +21,7 @@ function ProductObject(props) {
                 </Link>
                 <li>Art.-Nr.: {product.id}</li>
                 <li>{product.price} €</li>
+                <li>stock: {product.stockCount}</li>
                 <input
                     type='number'
                     className='input'
