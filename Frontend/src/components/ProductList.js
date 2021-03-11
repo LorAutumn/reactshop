@@ -5,6 +5,7 @@ import React, {
     useState,
     useDispatch,
 } from 'react'
+import Cookies from 'js-cookie'
 import ProductObject from './products/ProductObject'
 import { DataContext, CartDataContext } from '../App'
 import { LoadingErrorContext } from './Main'
@@ -45,8 +46,6 @@ function ProductList() {
                 if (findCartItem.value > findCartItem.stockCount) {
                     alert('out of stock')
                 } else cartDataContext.setCartData([...newCart]) // pushes new Cart to the cartData state
-                document.getElementById(id).value = null // sets input form to null
-                console.log('count', findCartItem.stockCount)
             } else if (
                 addValue > 0 &&
                 findItem.stockCount >= addValue + findItem.value
@@ -59,11 +58,20 @@ function ProductList() {
                         sum: itemSum,
                     },
                 ]) // adds a new item (object) to the cartData state (shoppingCart)
+                Cookies.set('cart', JSON.stringify(cartData), { expires: 2 })
+                cartData ? console.log('cdata', cartData) : console.log('error')
                 console.log('hey')
                 document.getElementById(id).value = null // sets input form to null
             } else alert('Out of stock')
         } else alert('please insert a number > 0')
     }
+
+    //sets every cart change to the 'cart' cookie
+    useEffect(() => {
+        Cookies.set('cart', JSON.stringify(cartData), { expires: 2 })
+        console.log('test', JSON.parse(Cookies.get('cart')))
+        console.log('cart changed')
+    }, [cartData])
 
     // removes an item from the cart
     const removeItem = id => {

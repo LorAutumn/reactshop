@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import Cookies from 'js-cookie'
 import CartObject from './products/CartObject'
 import { CartDataContext } from '../App'
 import CartTotalValue from './CartTotalValue'
@@ -10,15 +11,25 @@ function ShoppingCart() {
     const cartDataContext = useContext(CartDataContext)
     const cartData = cartDataContext.cartData
     const toggle = useContext(ToggleContext)
+    let cartItems = JSON.parse(Cookies.get('cart'))
+
+    useEffect(() => {
+        cartItems = JSON.parse(Cookies.get('cart'))
+        console.log('ci', cartItems)
+    }, [cartData])
 
     // removes an item from the cart
     const removeItem = id => {
         const newCart = cartData.filter(item => item.id !== id) // filters the actual id-Object out of the cartData Array an writes the filtered array to newCart variable
         cartDataContext.setCartData([...newCart]) // pushes new Cart to the cartData state
+        Cookies.set('cart', JSON.stringify(cartData), { expires: 2 })
+        console.log('Warenkorb', cartData)
+        console.log('newCart', newCart)
     }
 
     // maps all products of cartData (Shopping Cart)
-    const productComponents = cartDataContext.cartData.map(product => (
+    //const productComponents = cartDataContext.cartData.map(product => (
+    const productComponents = cartItems.map(product => (
         <CartObject
             key={product.id}
             product={product}
