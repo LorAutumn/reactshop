@@ -10,19 +10,25 @@ import { BrowserRouter, Link } from 'react-router-dom'
 function ShoppingCart() {
     const cartDataContext = useContext(CartDataContext)
     const cartData = cartDataContext.cartData
+    const setCartData = cartDataContext.setCartData
     const toggle = useContext(ToggleContext)
     let cartItems = JSON.parse(Cookies.get('cart'))
 
     useEffect(() => {
         cartItems = JSON.parse(Cookies.get('cart'))
+        setCartData(cartItems)
         console.log('ci', cartItems)
+    }, [])
+    useEffect(() => {
+        Cookies.set('cart', JSON.stringify(cartData), { expires: 2 })
+        console.log('test', JSON.parse(Cookies.get('cart')))
+        console.log('cart changed')
     }, [cartData])
 
     // removes an item from the cart
     const removeItem = id => {
         const newCart = cartData.filter(item => item.id !== id) // filters the actual id-Object out of the cartData Array an writes the filtered array to newCart variable
         cartDataContext.setCartData([...newCart]) // pushes new Cart to the cartData state
-        Cookies.set('cart', JSON.stringify(cartData), { expires: 2 })
         console.log('Warenkorb', cartData)
         console.log('newCart', newCart)
     }

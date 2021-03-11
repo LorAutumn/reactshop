@@ -46,11 +46,9 @@ function Header() {
         setSeen(!seen)
     }
 
-    const toggleCartPop = () => setSeenCart(!seenCart)
-
     return (
         <BrowserRouter forceRefresh={true}>
-            <ToggleContext.Provider value={{ togglePop, toggleCartPop }}>
+            <ToggleContext.Provider value={{ togglePop }}>
                 <header className='header'>
                     <div className='header-brand-wrapper'>
                         <h1 className='header-brand'>{headerTitle}</h1>
@@ -81,11 +79,6 @@ function Header() {
                     <br></br>
                     <div className='add-product-pop-up'>
                         {seen ? <AddProductPop toggle={togglePop} /> : null}
-                    </div>
-                    <div className='shopping-cart-pop-up'>
-                        {seenCart ? (
-                            <ShoppingCart toggle={toggleCartPop} />
-                        ) : null}
                     </div>
                 </header>
             </ToggleContext.Provider>
