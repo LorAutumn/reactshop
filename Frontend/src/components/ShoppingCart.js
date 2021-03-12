@@ -48,9 +48,6 @@ function ShoppingCart() {
         <div className='shopping-cart'>
             {/* displays the ProductList component */}
             <div className='shopping-cart-content'>
-                <Link to='/'>
-                    <span className='close'>&times;</span>
-                </Link>
                 <h1>Shopping Cart</h1>
                 {productComponents}
                 <CartTotalValue />
