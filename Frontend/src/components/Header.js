@@ -27,10 +27,6 @@ function Header() {
         }
     }
 
-    //browserAdress !== '/' && browserAdress !== 'cart' ? 'Product Details' :
-    //browserAdress === '/cart'? 'Shopping Cart' :
-    //browserAdress === `/` ? 'Shop Home'
-
     useEffect(() => {
         setHeaderTitle(setTitle)
     }, [browserAdress])

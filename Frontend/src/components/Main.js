@@ -38,9 +38,6 @@ function Main() {
             <LoadingErrorContext.Provider
                 value={{ loading: loading, error: error }}>
                 <div className='main'>
-                    <div className='cart-button'>
-                        <button>Cart</button>
-                    </div>
                     <Switch>
                         <Route path='/' component={ProductList} exact />
                         <Route path='/cart' component={Cart} exact />
