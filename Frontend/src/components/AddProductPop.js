@@ -24,6 +24,7 @@ function AddProductPop(props) {
                 name: handleChange.handleChangeList.newProductName,
                 price: handleChange.handleChangeList.newProductPrice,
                 value: null,
+                stockCount: handleChange.handleChangeList.newProductStock,
             },
         ])
         toggle.togglePop()
@@ -50,6 +51,12 @@ function AddProductPop(props) {
                     onChange={passDownData}
                 />
                 <br />
+                <input
+                    name='newProductStock'
+                    type='number'
+                    placeholder='stockQuantity'
+                    onChange={passDownData}
+                />
                 <br />
                 <input
                     name='button'

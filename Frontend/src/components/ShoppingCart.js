@@ -4,7 +4,7 @@ import CartObject from './products/CartObject'
 import { CartDataContext } from '../App'
 import CartTotalValue from './CartTotalValue'
 import { ToggleContext } from './Header'
-import { BrowserRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // shopping cart wich lists all products added to the cart
 function ShoppingCart() {
@@ -14,11 +14,12 @@ function ShoppingCart() {
     const toggle = useContext(ToggleContext)
     let cartItems = JSON.parse(Cookies.get('cart'))
 
+    // on initial site load - loads items out of 'cart' cookie into cartData state
     useEffect(() => {
         cartItems = JSON.parse(Cookies.get('cart'))
         setCartData(cartItems)
-        console.log('ci', cartItems)
     }, [])
+    // on every cartData state change - loads items out of 'cart' cookie into cartData state
     useEffect(() => {
         Cookies.set('cart', JSON.stringify(cartData), { expires: 2 })
         console.log('test', JSON.parse(Cookies.get('cart')))
@@ -34,7 +35,6 @@ function ShoppingCart() {
     }
 
     // maps all products of cartData (Shopping Cart)
-    //const productComponents = cartDataContext.cartData.map(product => (
     const productComponents = cartItems.map(product => (
         <CartObject
             key={product.id}
@@ -44,7 +44,6 @@ function ShoppingCart() {
     ))
 
     return (
-        // <div className='ProductList' id='list'>
         <div className='shopping-cart'>
             {/* displays the ProductList component */}
             <div className='shopping-cart-content'>
@@ -57,5 +56,3 @@ function ShoppingCart() {
 }
 
 export default ShoppingCart
-
-//<span className='close' onClick={toggle.toggleCartPop}>&times;</span>

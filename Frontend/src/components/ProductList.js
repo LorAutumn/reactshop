@@ -1,16 +1,9 @@
-import React, {
-    useContext,
-    useEffect,
-    useReducer,
-    useState,
-    useDispatch,
-} from 'react'
+import React, { useContext, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import ProductObject from './products/ProductObject'
 import { DataContext, CartDataContext } from '../App'
 import { LoadingErrorContext } from './Main'
 import Cart from './ShoppingCart'
-import axios from 'axios'
 
 // a list of all products that can be ordered (class based)
 function ProductList() {
@@ -60,7 +53,6 @@ function ProductList() {
                 ]) // adds a new item (object) to the cartData state (shoppingCart)
                 Cookies.set('cart', JSON.stringify(cartData), { expires: 2 })
                 cartData ? console.log('cdata', cartData) : console.log('error')
-                console.log('hey')
                 document.getElementById(id).value = null // sets input form to null
             } else alert('Out of stock')
         } else alert('please insert a number > 0')
@@ -73,12 +65,7 @@ function ProductList() {
         console.log('cart changed')
     }, [cartData])
 
-    // removes an item from the cart
-    const removeItem = id => {
-        const newCart = cartData.filter(item => item.id !== id) // filters the actual id-Object out of the cartData Array an writes the filtered array to newCart variable
-        cartDataContext.setCartData([...newCart]) // pushes new Cart to the cartData state
-    }
-
+    // maps products from productList
     const productComponents = dataContext.data.map(product => (
         <ProductObject
             key={product.id}
