@@ -20,9 +20,12 @@ function CartTotalValue() {
 
     return (
         <div className='cart-total-value'>
-            <p>cart total value: {cartSumContext.cartSum} €</p>
-            <p>vat: {cartSumContext.cartSum * 0.16} €</p>
-            <p>total incl. vat (16 %): {cartSumContext.cartSum * 1.16} €</p>
+            <p>cart total value: {cartSumContext.cartSum.toFixed(2)} €</p>
+            <p>vat: {(cartSumContext.cartSum * 0.16).toFixed(2)} €</p>
+            <p>
+                total incl. vat (16 %):{' '}
+                {(cartSumContext.cartSum * 1.16).toFixed(2)} €
+            </p>
         </div>
     )
 }
